@@ -1,0 +1,40 @@
+﻿PROTEUS VIDEO DEMO — সহজ ধাপ, সর্বোচ্চ ৫ মিনিট
+
+শুরু করার আগে
+HEX নির্বাচন, clock 16MHz, voltage প্রায় 231V, current প্রায় 2A।
+সব button OPEN রাখবে। Computer command দেখাতে Virtual Terminal আগে বসাবে:
+TX pin31 → RXD, TXD → RX pin30, 9600/8N1।
+আগে নিজে sequence চালিয়ে দেখবে। কাজ না করলে সেটাকে PASS বলবে না।
+
+০:০০–০:৩০ — project পরিচয়
+নিজের নাম বলবে। বোঝাবে: knob দিয়ে voltage/current test, green LED হলো load।
+MCU limit-এর বাইরে গেলে load বন্ধ করে; LCD-তে কারণ দেখায়।
+
+০:৩০–১:১৫ — normal এবং fault
+প্রায় 231V / 2A দিয়ে Play করবে। WAIT-এর পরে ON / green light দেখাবে।
+Voltage প্রায় 270V করবে: OVERVOLTAGE OFF / red ON / green OFF দেখাবে।
+231V ফেরাবে; delay-এর পরে load ফিরে আসে দেখাবে।
+Current প্রায় 6A করবে: OVERCURRENT OFF দেখাবে; পরে 2A ফেরাবে।
+
+১:১৫–২:১০ — repeated trip এবং ACK
+আগের OV এবং OC-তে ON থেকে OFF হলে ইতিমধ্যে দুইটি trip হয়েছে।
+এবার load ON হওয়ার পরে আরেকবার fault করাবে: এটা তৃতীয় trip।
+তিনটি trip-ই প্রথম trip থেকে ৬০ সেকেন্ডের মধ্যে করবে; মাঝখানে কথা বলে সময় নষ্ট করবে না।
+দ্বিতীয় trip-এর পরে recovery কমপক্ষে ১০ সেকেন্ড দেখাবে।
+তৃতীয় trip-এ LOCK দেখাবে। Input safe করে ACK চাপবে; নতুন delay-এর পরে ON দেখাবে।
+
+২:১০–৩:০০ — local ও computer settings
+SET চাপবে; UP/DOWN দিয়ে limit পাল্টাবে; SET দিয়ে menu শেষ করে save করবে।
+Terminal-এ STATUS, SET VMAX 255, SAVE এবং LOG একে একে দেখাবে।
+শেষে DEFAULTS এবং SAVE দিয়ে defaults ফিরিয়ে রাখতে পারবে।
+
+৩:০০–৪:১০ — relay feedback, circuit-এ test switch থাকলে
+Main COM–NO-এর normally open bypass switch বন্ধ করবে; backup bypass করবে না।
+Fault input তৈরি করবে। ঠিক wiring থাকলে backup load বন্ধ করবে, পরে relay LOCK হবে।
+Switch বন্ধ থাকা অবস্থায় ACK denied দেখাবে। Switch খুলে input safe করে ACK দেবে।
+Switch না থাকলে এই অংশ বাদ দেবে এবং recorded test হয়েছে বলে বলবে না।
+
+৪:১০–৪:৪৫ — সহজ ব্যাখ্যা
+তিনটি যোগ: relay feedback, repeated-trip lock, আটটি event-এর log।
+বলবে: এখানে 5V simulation করা হয়েছে; real AC RMS বা hardware trip time মাপা হয়নি।
+নিজের ভাষায় বোঝাবে। Video ৫ মিনিট ও 100MB-এর মধ্যে আছে কি না দেখে নেবে।

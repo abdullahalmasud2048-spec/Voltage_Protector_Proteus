@@ -1,0 +1,99 @@
+HOST SOFTWARE TESTS - mock ADC, UART, LCD, EEPROM and clock
+No AVR binary, Wokwi execution, relay mechanics or mains measurements.
+Profile: WOKWI (npn module active HIGH, 115200 baud)
+PASS 1: boot OFF; ADC scaling; 3 s healthy qualification before connection
+PASS 2: over-voltage disconnects on next sample and remains OFF during fault
+PASS 3: over-current disconnects on next sample
+PASS 4: simultaneous over-voltage and over-current retain both fault bits
+PASS 5: under-voltage, including zero input, prevents connection
+PASS 6: recovery voltage margin prevents reconnecting just below trip limit
+PASS 7: recovery current margin prevents reconnecting near current limit
+PASS 8: a new fault restarts the continuous healthy recovery interval
+PASS 9: computer setting change tightens voltage limit and trips existing load
+PASS 10: case-insensitive computer current setting change takes immediate effect
+PASS 11: malformed, overflowing, invalid-range and inconsistent settings rejected
+PASS 12: oversized command discarded entirely; next command accepted
+PASS 13: local SET/UP/DOWN buttons edit all four settings
+PASS 14: local exit saves with load OFF; valid EEPROM restored; corrupted record rejected
+PASS 15: button bounce and a held button produce one adjustment per press
+PASS 16: protection stays active in menu and while a serial command is incomplete
+PASS 17: blocked serial output cannot block protection
+PASS 18: serial SAVE disconnects before EEPROM writes and restores saved settings
+PASS 19: DEFAULTS changes RAM only until explicitly saved
+PASS 20: computer status and LCD show settings, readings and fault state
+PASS 21: unsigned elapsed-time logic survives 32-bit millis rollover
+PASS 22: trip threshold is strictly above limit; equality alone does not trip
+PASS 23: both series contacts start OFF; fault commands backup OFF before main OFF
+PASS 24: welded main contact: backup isolates on fault without waiting for diagnosis
+PASS 25: serial and local ACK cannot clear a main contact that is still closed
+PASS 26: fixing welded contact then ACK starts a fresh delay, never instant reconnect
+PASS 27: main contact failing to close is detected and backup is commanded OFF
+PASS 28: relay settling and short feedback glitches do not create nuisance lockout
+PASS 29: one sustained fault counts once and first trip uses the normal recovery delay
+PASS 30: second distinct trip within 60 s requires ten continuous healthy seconds
+PASS 31: third distinct trip latches lockout; expiry of trip window does not release it
+PASS 32: ACK denied for active fault and for readings inside recovery margin
+PASS 33: safe ACK resets trip history and returns through ordinary recovery
+PASS 34: setting edits, DEFAULTS and SAVE cannot bypass the second-trip backoff
+PASS 35: SAVE, DEFAULTS and local settings buttons cannot clear a lockout
+PASS 36: lockout survives retained EEPROM reset; event log restarts; ACK clears lock record
+PASS 37: unknown EEPROM lock record starts locked until safe acknowledgement
+PASS 38: trip older than rolling 60 s window is excluded from a new disturbance
+PASS 39: second-trip feature never shortens a configured delay longer than ten seconds
+PASS 40: rolling trip window remains correct across millis wraparound
+PASS 41: trip log stores timestamp, readings, active thresholds and distinct-trip count
+PASS 42: log wraps at eight events, prints oldest first and uses an immutable snapshot
+PASS 43: blocked LOG transfer cannot delay disconnection and resumes when UART is available
+PASS 44: CR, LF and CRLF command endings work for both simulator terminals
+PASS 45: lockout display takes priority over the settings menu
+45 meaningful firmware behavior checks passed.
+
+HOST SOFTWARE TESTS - mock ADC, UART, LCD, EEPROM and clock
+No AVR binary, Wokwi execution, relay mechanics or mains measurements.
+Profile: PROTEUS (active HIGH drivers, 9600 baud)
+PASS 1: boot OFF; ADC scaling; 3 s healthy qualification before connection
+PASS 2: over-voltage disconnects on next sample and remains OFF during fault
+PASS 3: over-current disconnects on next sample
+PASS 4: simultaneous over-voltage and over-current retain both fault bits
+PASS 5: under-voltage, including zero input, prevents connection
+PASS 6: recovery voltage margin prevents reconnecting just below trip limit
+PASS 7: recovery current margin prevents reconnecting near current limit
+PASS 8: a new fault restarts the continuous healthy recovery interval
+PASS 9: computer setting change tightens voltage limit and trips existing load
+PASS 10: case-insensitive computer current setting change takes immediate effect
+PASS 11: malformed, overflowing, invalid-range and inconsistent settings rejected
+PASS 12: oversized command discarded entirely; next command accepted
+PASS 13: local SET/UP/DOWN buttons edit all four settings
+PASS 14: local exit saves with load OFF; valid EEPROM restored; corrupted record rejected
+PASS 15: button bounce and a held button produce one adjustment per press
+PASS 16: protection stays active in menu and while a serial command is incomplete
+PASS 17: blocked serial output cannot block protection
+PASS 18: serial SAVE disconnects before EEPROM writes and restores saved settings
+PASS 19: DEFAULTS changes RAM only until explicitly saved
+PASS 20: computer status and LCD show settings, readings and fault state
+PASS 21: unsigned elapsed-time logic survives 32-bit millis rollover
+PASS 22: trip threshold is strictly above limit; equality alone does not trip
+PASS 23: both series contacts start OFF; fault commands backup OFF before main OFF
+PASS 24: welded main contact: backup isolates on fault without waiting for diagnosis
+PASS 25: serial and local ACK cannot clear a main contact that is still closed
+PASS 26: fixing welded contact then ACK starts a fresh delay, never instant reconnect
+PASS 27: main contact failing to close is detected and backup is commanded OFF
+PASS 28: relay settling and short feedback glitches do not create nuisance lockout
+PASS 29: one sustained fault counts once and first trip uses the normal recovery delay
+PASS 30: second distinct trip within 60 s requires ten continuous healthy seconds
+PASS 31: third distinct trip latches lockout; expiry of trip window does not release it
+PASS 32: ACK denied for active fault and for readings inside recovery margin
+PASS 33: safe ACK resets trip history and returns through ordinary recovery
+PASS 34: setting edits, DEFAULTS and SAVE cannot bypass the second-trip backoff
+PASS 35: SAVE, DEFAULTS and local settings buttons cannot clear a lockout
+PASS 36: lockout survives retained EEPROM reset; event log restarts; ACK clears lock record
+PASS 37: unknown EEPROM lock record starts locked until safe acknowledgement
+PASS 38: trip older than rolling 60 s window is excluded from a new disturbance
+PASS 39: second-trip feature never shortens a configured delay longer than ten seconds
+PASS 40: rolling trip window remains correct across millis wraparound
+PASS 41: trip log stores timestamp, readings, active thresholds and distinct-trip count
+PASS 42: log wraps at eight events, prints oldest first and uses an immutable snapshot
+PASS 43: blocked LOG transfer cannot delay disconnection and resumes when UART is available
+PASS 44: CR, LF and CRLF command endings work for both simulator terminals
+PASS 45: lockout display takes priority over the settings menu
+45 meaningful firmware behavior checks passed.

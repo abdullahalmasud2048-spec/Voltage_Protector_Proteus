@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<rect width="100%" height="100%" fill="white"/>
+<text x="800" y="35" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="34" font-weight="700" fill="#183449">VOLTAGE PROTECTOR PLUS - PROTEUS</text>
+<text x="800" y="78" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" fill="#183449">Conceptual architecture - intended wiring is specified in wiring.md</text>
+<rect x="40" y="270" width="260" height="130" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="170.0" y="300" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Voltage input</text>
+<text x="170.0" y="335" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">0-300 V equivalent</text>
+<text x="170.0" y="363" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">5 V potentiometer</text>
+<rect x="40" y="440" width="260" height="130" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="170.0" y="470" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Current input</text>
+<text x="170.0" y="505" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">0-10 A equivalent</text>
+<text x="170.0" y="533" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">5 V potentiometer</text>
+<rect x="380" y="290" width="380" height="220" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="570.0" y="320" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">ATmega328P</text>
+<text x="570.0" y="355" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">5 ms sample target</text>
+<text x="570.0" y="383" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">3 s / 10 s recovery</text>
+<text x="570.0" y="411" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">3 trips in 60 s: LOCK</text>
+<text x="570.0" y="439" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">8-event RAM history</text>
+<rect x="390" y="120" width="350" height="110" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="565.0" y="150" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">LCD 16 x 2</text>
+<text x="565.0" y="185" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">Readings / wait / lock</text>
+<rect x="1000" y="120" width="530" height="110" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="1265.0" y="150" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Virtual Terminal 9600</text>
+<text x="1265.0" y="185" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">STATUS / SET / SAVE / LOG / ACK</text>
+<rect x="380" y="590" width="380" height="115" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="570.0" y="620" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Four local buttons</text>
+<text x="570.0" y="655" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">SET / UP / DOWN / ACK</text>
+<rect x="870" y="330" width="270" height="130" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="1005.0" y="360" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Main relay</text>
+<text x="1005.0" y="395" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">D8 command</text>
+<text x="1005.0" y="423" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">A2 contact feedback</text>
+<rect x="1210" y="330" width="300" height="130" rx="12" fill="#eff6fa" stroke="#183449" stroke-width="2"/>
+<text x="1360.0" y="360" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Backup relay</text>
+<text x="1360.0" y="395" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">D10 command</text>
+<text x="1360.0" y="423" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">OFF command on fault</text>
+<polyline points="300,335 340,335 340,350 380,350" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="380,350 368.0,345.0 368.0,355.0" fill="#183449"/>
+<text x="339" y="311" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#183449">A0</text>
+<polyline points="300,505 340,505 340,440 380,440" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="380,440 368.0,435.0 368.0,445.0" fill="#183449"/>
+<text x="339" y="539" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#183449">A1</text>
+<polyline points="565,290 565,230" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="565,230 560.0,242.0 570.0,242.0" fill="#183449"/>
+<polyline points="1000,175 800,175 800,310 760,310" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="760,310 772.0,315.0 772.0,305.0" fill="#183449"/>
+<text x="864" y="198" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#183449">UART</text>
+<polyline points="760,310 800,310 800,175 1000,175" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="1000,175 988.0,170.0 988.0,180.0" fill="#183449"/>
+<polyline points="570,590 570,510" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="570,510 565.0,522.0 575.0,522.0" fill="#183449"/>
+<text x="455" y="551" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#183449">D7 / D6 / D9 / A3</text>
+<polyline points="760,360 870,360" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="870,360 858.0,355.0 858.0,365.0" fill="#183449"/>
+<text x="811" y="336" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#183449">D8</text>
+<polyline points="760,395 825,395 825,285 1360,285 1360,330" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="1360,330 1365.0,318.0 1355.0,318.0" fill="#183449"/>
+<text x="1075" y="260" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#183449">D10</text>
+<polyline points="1005,460 1005,548 715,548 715,510" fill="none" stroke="#7b3ca7" stroke-width="3"/>
+<polygon points="715,510 710.0,522.0 720.0,522.0" fill="#7b3ca7"/>
+<text x="915" y="582" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#7b3ca7">A2 observes main NO</text>
+<text x="1220" y="660" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#183449">Fault command: BACKUP OFF before MAIN</text>
+<text x="800" y="746" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#183449">INTENDED LOAD CONTACT PATH - 5 V</text>
+<rect x="50" y="790" width="180" height="110" rx="12" fill="#ecfdf5" stroke="#183449" stroke-width="2"/>
+<text x="140.0" y="820" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">5 V supply</text>
+<text x="140.0" y="855" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">No mains</text>
+<rect x="325" y="790" width="260" height="110" rx="12" fill="#ecfdf5" stroke="#183449" stroke-width="2"/>
+<text x="455.0" y="820" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">MAIN contact</text>
+<text x="455.0" y="855" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">COM to NO</text>
+<rect x="725" y="790" width="260" height="110" rx="12" fill="#ecfdf5" stroke="#183449" stroke-width="2"/>
+<text x="855.0" y="820" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">BACKUP contact</text>
+<text x="855.0" y="855" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">COM to NO</text>
+<rect x="1125" y="790" width="380" height="110" rx="12" fill="#ecfdf5" stroke="#183449" stroke-width="2"/>
+<text x="1315.0" y="820" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" fill="#183449">Green LED load</text>
+<text x="1315.0" y="855" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#183449">330 ohms + LED to GND</text>
+<polyline points="230,845 325,845" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="325,845 313.0,840.0 313.0,850.0" fill="#183449"/>
+<polyline points="585,845 725,845" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="725,845 713.0,840.0 713.0,850.0" fill="#183449"/>
+<polyline points="985,845 1125,845" fill="none" stroke="#183449" stroke-width="3"/>
+<polygon points="1125,845 1113.0,840.0 1113.0,850.0" fill="#183449"/>
+<text x="655" y="931" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#183449">Main NO also connects to A2 and a 10k pulldown to GND.</text>
+<text x="800" y="974" text-anchor="middle" dominant-baseline="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="700" fill="#183449">Demo switch bypasses MAIN only. BACKUP stays in series.</text>
+</svg>

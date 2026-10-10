@@ -1,0 +1,49 @@
+﻿কোন COMPONENT কী কাজ করে
+
+U1 / ATMEGA328P: circuit-এর সিদ্ধান্ত নেয়। Voltage ও current পড়ে; limit-এর বাইরে
+গেলে relay বন্ধ করে। LCD, button, red light ও computer command-ও চালায়।
+HEX file: MCU-এর কাজ করার program। Program File-এ এই file নির্বাচন করতে হয়।
+
+RV1: voltage-এর test input। এটা ঘোরালে LCD-তে voltage পরিবর্তন হয়।
+RV2: current-এর test input। এটা ঘোরালে current পরিবর্তন হয়।
+এখানে knob দিয়ে test করা হচ্ছে; LED OFF হলেও RV2-এর reading নিজের থেকে শূন্য হবে না।
+RV3: LCD contrast ঠিক করে। Protection limit পরিবর্তন করে না।
+
+LCD1 / LM016L: voltage, current, ON, OFF, WAIT, LOCK এবং settings দেখায়।
+SET: settings page পাল্টায়। UP: value বাড়ায়। DOWN: value কমায়।
+ACK: সমস্যার পরে safe অবস্থায় LOCK ছাড়ানোর অনুরোধ করে।
+Button সব সময় ধরে রাখবে না; একবার চাপ দিয়ে ছেড়ে দেবে।
+
+RL1 / main relay: সাধারণভাবে load-এর পথ খুলে বা বন্ধ করে।
+RL2 / backup relay: main relay আটকে ON থাকলেও, ঠিকভাবে series connection থাকলে
+load-এর পথ খুলতে পারে। Load চলার জন্য দুই relay-র NO contact-ই বন্ধ হতে হবে।
+Main NO থেকে MCU feedback পায়: relay-কে যা করতে বলেছে সেটা হয়েছে কি না দেখে।
+
+Q1 ও Q2 / 2N2222: MCU-এর ছোট control signal দিয়ে relay coil চালায়।
+Base-এর 1k resistor: base current সীমিত করে।
+Base-এর 10k resistor: control signal না থাকলে transistor OFF রাখতে সাহায্য করে।
+D1 ও D2 / 1N4007: coil OFF হওয়ার সময় তার voltage kick থেকে driver-কে সুরক্ষা দেয়।
+Diode-এর দাগওয়ালা cathode side 5V-এ, অন্য side collector-এ যায়।
+
+R6 / feedback-এর 10k: main contact খুললে feedback reading LOW করে।
+Main contact বন্ধ থাকলে feedback HIGH হয়। এই feedback-এর সঙ্গে relay drive pin
+সরাসরি short থাকবে না। Circuit-এর connection table-এ দুই pin আলাদা দেখানো আছে।
+
+D3 / green LED: test load। এটা জ্বললে load-এর পথ দিয়ে current যাচ্ছে বোঝায়।
+D4 / red LED: MCU fault বা LOCK দেখায়। WAIT অবস্থায় দুই light-ই OFF থাকতে পারে।
+Green ও red LED-র 330-ohm resistor: LED current সীমিত করে।
+
+R1 / reset-এর 10k: RESET pin স্বাভাবিকভাবে HIGH রাখে।
+C1 ও C2 / 100nF: supply/reference স্থির রাখতে সাহায্য করে।
+VCC: 5V supply node। GND: সব voltage-এর common reference; GND প্রয়োজন।
+Project-এর power rails-এ VCC/VDD=5V এবং GND=0V দেওয়া আছে।
+
+EEPROM: settings ও LOCK-এর কারণ মনে রাখে।
+RAM event log: সর্বশেষ আটটি ঘটনার history। Reset হলে এই history মুছে যায়।
+Virtual Terminal: computer command দেখানোর Proteus window। 9600 baud ব্যবহার করবে।
+
+সহজ করে পুরো কাজ
+Knob → MCU reading → limit check → relay decision → LED load।
+সমস্যা হলে OFF। Healthy input স্থির থাকলে delay-এর পরে ON।
+বারবার নতুন trip হলে LOCK। Main contact কথা না শুনলেও LOCK।
+সমস্যাটি ঠিক করে ACK দিলে আবার অপেক্ষার পরে ON হতে পারে।

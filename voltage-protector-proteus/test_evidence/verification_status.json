@@ -1,0 +1,30 @@
+{
+  "packaged_date": "2026-10-10",
+  "native_project_included": true,
+  "native_project_bytes_preserved": true,
+  "native_project_container_integrity": "pass",
+  "native_project_executed_in_this_workspace": false,
+  "native_connectivity_certified": false,
+  "native_observations": [
+    "LCD operation",
+    "VMAX settings screen",
+    "OVERVOLTAGE OFF at 252.1 V and 2.00 A; red ON; green OFF; relay levers OFF",
+    "OVERCURRENT OFF in earlier schematic revision with simultaneous under-voltage"
+  ],
+  "software_evidence": {
+    "original_log_date": "2026-10-09",
+    "proteus_profile_host_checks_passed": 45,
+    "proteus_profile_avr_hex_checks_passed": 8,
+    "scope": "Host mocks and functional AVR CPU peripheral models; not native Proteus validation"
+  },
+  "native_tests_awaiting_recording": [
+    "Healthy ON-to-fault OFF transition",
+    "UART commands",
+    "Repeated-trip lockout and safe ACK",
+    "Contact-fault injection and backup load isolation",
+    "EEPROM settings retention"
+  ],
+  "physical_hardware_or_mains_tested": false,
+  "candidate_video_included": false,
+  "public_github_publication_or_form_submission_performed": false
+}

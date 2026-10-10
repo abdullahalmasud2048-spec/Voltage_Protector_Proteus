@@ -1,0 +1,23 @@
+ACTUAL AVR HEX EXECUTION - avr8js 0.21.1, ATmega328P, 16 MHz, 2 KB SRAM
+ADC voltages / contacts / buttons are functional models; no Proteus or physical hardware run.
+Profile: WOKWI - project_files/firmware/voltage_protector_wokwi.hex
+PASS 1: WOKWI: HEX boots OFF then ON; correct readings, UART baud and 8N1
+PASS 2: WOKWI: provided machine code isolates backup first and counts one sustained fault once
+PASS 3: WOKWI: second trip waits >=10 s; third distinct trip stores a lock
+PASS 4: WOKWI: unsafe ACK denied, safe ACK returns through fresh recovery
+PASS 5: WOKWI: welded main remains isolated by backup; ACK cannot bypass feedback
+PASS 6: WOKWI: actual HEX streams eight complete diagnostic event lines
+PASS 7: WOKWI: retained EEPROM lock survives CPU restart and safe ACK clears it
+PASS 8: WOKWI: actual CRC settings record is saved with load OFF and restored at restart
+WOKWI: observed minimum stack pointer before restart = 1928 (not an exhaustive stack bound)
+Profile: PROTEUS - project_files/proteus/voltage_protector_proteus.hex
+PASS 9: PROTEUS: HEX boots OFF then ON; correct readings, UART baud and 8N1
+PASS 10: PROTEUS: provided machine code isolates backup first and counts one sustained fault once
+PASS 11: PROTEUS: second trip waits >=10 s; third distinct trip stores a lock
+PASS 12: PROTEUS: unsafe ACK denied, safe ACK returns through fresh recovery
+PASS 13: PROTEUS: welded main remains isolated by backup; ACK cannot bypass feedback
+PASS 14: PROTEUS: actual HEX streams eight complete diagnostic event lines
+PASS 15: PROTEUS: retained EEPROM lock survives CPU restart and safe ACK clears it
+PASS 16: PROTEUS: actual CRC settings record is saved with load OFF and restored at restart
+PROTEUS: observed minimum stack pointer before restart = 1890 (not an exhaustive stack bound)
+16 actual HEX behavior checks passed across two profiles.

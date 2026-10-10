@@ -1,0 +1,47 @@
+{
+  "packaged_date": "2026-10-10",
+  "controller": "ATmega328P / Arduino Uno firmware, 16 MHz",
+  "profile": "PROTEUS_PROFILE enabled, active HIGH NPN drivers, UART 9600/8N1",
+  "source_path": "src/voltage_protector/voltage_protector.ino",
+  "source_sha256": "6950c800a9e92bb3f7d87bc58c3b83e301e2ba17c093a956701c9fe0a83e8300",
+  "hex_path": "project_files/voltage_protector_proteus.hex",
+  "hex": {
+    "file_bytes": 33653,
+    "sha256": "6614635f2979f031ec92dbda7e70244fbcdf2f4768230052f07b4dc6d7153792",
+    "records": 749,
+    "checksums_valid": true,
+    "eof_present": true,
+    "populated_flash_bytes": 11958,
+    "minimum_flash_address": 0,
+    "maximum_flash_address": 11957,
+    "contiguous": true
+  },
+  "compiler_export_origin": "Earlier Wokwi Arduino Uno AVR build/download; compiler version not recorded",
+  "firmware_unchanged_since_prior_software_checks": true,
+  "native_project": {
+    "path": "project_files/Protection_Device.pdsprj",
+    "file_bytes": 22572,
+    "sha256": "042bb91a55dd12b0a0fbe77a5da445c3b9ec200dac7f85019b7f0e1d7dfd9093",
+    "matches_uploaded_file": true,
+    "embedded_files": {
+      "SCRIPTS/PWRRAILS.DAT": 82,
+      "ROOT.CDB": 6485,
+      "ROOT.DSN": 121389,
+      "GRAPHS.DAT": 25,
+      "PROJECT.XML": 250
+    },
+    "mcu_clock_property": "16Mhz",
+    "power_rails": {
+      "VCC_VDD_volts": 5,
+      "GND_volts": 0
+    },
+    "program_file_is_absolute_windows_path": true,
+    "select_included_hex_once_after_extraction": true
+  },
+  "design_report": {
+    "path": "design_document.pdf",
+    "pages": 1,
+    "sha256": "5b0263a79b6f0b0b6241acff768d9dd4525e271e395db01a5abcad9caf2bcef5"
+  },
+  "evidence_scope": "Existing software logs and candidate screenshots; no native Proteus execution or circuit changes performed here"
+}
